@@ -36,6 +36,9 @@ public class Persona implements Serializable {
     public Persona() {
 
     }
+    public Persona(int idPersona) {
+    this.idPersona = idPersona;
+    }
 
     public int getIdPersona() {
         return idPersona;
