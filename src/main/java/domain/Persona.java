@@ -28,7 +28,9 @@ public class Persona implements Serializable {
     @Basic
     @Column(name = "telefono", nullable = true, length = 50)
     private String telefono;
-    @OneToMany(mappedBy = "personaByIdPersona")
+    //EAGER or lazy
+    //lazy es por default
+    @OneToMany(mappedBy = "personaByIdPersona",fetch = FetchType.EAGER, cascade={CascadeType.ALL})
     private Collection<Usuario> usuariosByIdPersona;
 
     public Persona() {

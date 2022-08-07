@@ -22,9 +22,16 @@ public class Usuario {
     @Basic
     @Column(name = "password", nullable = true, length = 50)
     private String password;
-    @ManyToOne
+    //EAGER or lazy
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @PrimaryKeyJoinColumn(name = "id_persona", referencedColumnName = "id_persona")
     private Persona personaByIdPersona;
+
+    public Usuario(String username,String password,Persona persona) {
+        this.username = username;
+        this.password = password;
+        this.personaByIdPersona = persona;
+    }
 
     public int getIdUsuario() {
         return idUsuario;
