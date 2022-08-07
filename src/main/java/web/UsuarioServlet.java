@@ -18,6 +18,7 @@ public class UsuarioServlet extends HttpServlet {
     UsuarioServiceLocal usuarioService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
         List<Usuario> personas = usuarioService.listarPersonas();
         System.out.println(personas);
         request.setAttribute("usuarios", personas);
